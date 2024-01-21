@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./question-mark.png" />
+    <title>Guess My Number</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-flex">
+        <button class="btn again">Again!</button>
+        <div class="container-flex">
+          <p class="between">
+            (Between 1 and <input type="number" class="input-range" />)
+          </p>
+          <button class="btn go">Go!</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Guess My Number!</h1>
+      <div class="number"><p>?</p></div>
+      <hr />
+      <div class="container-flex container-flex-inputs">
+        <input type="number" class="guess" />
+        <button class="btn check">Check!</button>
+      </div>
+      <div class="container-flex container-flex-rewards">
+        <p class="message">Enter a range number to start</p>
+        <p class="label-score">💯 Score: <span class="score">20</span></p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
