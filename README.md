@@ -12,4 +12,4 @@ Description: The "Guess My Number" project is a classic JavaScript game where th
 
 Files: index.html,  style.css, index.js, .prettierc.
 
-Demo: Link - 
+Link - https://peteropeduua.github.io/JS-course-projects/
