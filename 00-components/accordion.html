@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Accordion</title>
+
+    <style>
+      /* general styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #343a40;
+        font-family: "Inter", sans-serif;
+        line-height: 1;
+      }
+
+      /* ====== styling ===== */
+      .accordion {
+        width: 700px;
+        margin: 100px auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .item {
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 24px 32px;
+        align-items: center;
+      }
+
+      .number,
+      .text {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .number {
+        color: #ced4da;
+      }
+
+      .text {
+        font-size: 24px;
+      }
+
+      .icon {
+        height: 24px;
+        width: 24px;
+        stroke: #087f5b;
+      }
+
+      .hidden-box {
+        grid-column: 2;
+        display: none;
+      }
+
+      .hidden-text {
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .hidden-box ul {
+        color: #868e96;
+        margin-left: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* open element styling */
+      .open {
+        border-top: 4px solid #087f5b;
+      }
+
+      .open .hidden-box {
+        display: block;
+      }
+
+      .open .number,
+      .open .text {
+        color: #087f5b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="item">
+        <p class="number">01</p>
+        <p class="text">Where is the manufactiring done?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p class="hidden-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            reiciendis perferendis optio est sint eius tenetur, cupiditate dolor
+            hic dignissimos, vel debitis distinctio, suscipit voluptatum saepe!
+            Debitis neque ad fugiat.
+          </p>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing sit amet.
+            </li>
+            <li>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit.</li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim,
+              quod.
+            </li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item open">
+        <p class="number">02</p>
+        <p class="text">How much time do I have to make return?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p class="hidden-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            reiciendis perferendis optio est sint eius tenetur, cupiditate dolor
+            hic dignissimos, vel debitis distinctio, suscipit voluptatum saepe!
+            Debitis neque ad fugiat.
+          </p>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing sit amet.
+            </li>
+            <li>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit.</li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim,
+              quod.
+            </li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <p class="number">03</p>
+        <p class="text">Do you ship abroad?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+        <div class="hidden-box">
+          <p class="hidden-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            reiciendis perferendis optio est sint eius tenetur, cupiditate dolor
+            hic dignissimos, vel debitis distinctio, suscipit voluptatum saepe!
+            Debitis neque ad fugiat.
+          </p>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing sit amet.
+            </li>
+            <li>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit.</li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim,
+              quod.
+            </li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
