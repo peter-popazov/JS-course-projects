@@ -29,15 +29,16 @@
       .accordion {
         width: 700px;
         margin: 100px auto;
-
+        
         display: flex;
         flex-direction: column;
         gap: 24px;
       }
-
+      
       .item {
         box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
         padding: 24px;
+        cursor: pointer;
 
         display: grid;
         grid-template-columns: auto 1fr auto;
@@ -214,5 +215,14 @@
         </div>
       </div>
     </div>
+    <script>
+      for (let i = 0; i < document.querySelectorAll(".item").length; i++) {
+        document
+          .querySelectorAll(".item")
+          [i].addEventListener("click", function () {
+            document.querySelectorAll(".item")[i].classList.toggle("open");
+          });
+      }
+    </script>
   </body>
 </html>
