@@ -27,9 +27,8 @@ const init = function () {
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--active');
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
+  document.querySelector(`.player--0`).classList.remove('player--winner');
+  document.querySelector(`.player--1`).classList.remove('player--winner');
   document.querySelector(`.player--0`).classList.add('player--active');
   score0El.textContent = 0;
   score1El.textContent = 0;
