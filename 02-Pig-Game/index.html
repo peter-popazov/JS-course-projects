@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Pig Game</title>
   </head>
-  <body> 
+  <body>
     <main>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
@@ -30,6 +30,35 @@
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+
+      <div class="modal">
+        <button class="close-modal">&times;</button>
+        <h2 class="modal-heading">Enter players` names</h2>
+        <div class="modal-form">
+          <div>
+            <label for="name-0">Player 1</label>
+            <input
+              class="player-0"
+              type="text"
+              name="name"
+              id="name-0"
+              required
+            />
+          </div>
+          <div>
+            <label for="name-1">Player 2</label>
+            <input
+              class="player-1"
+              type="text"
+              name="name"
+              id="name-1"
+              required
+            />
+          </div>
+          <button class="btn-form">Start playing</button>
+        </div>
+      </div>
+      <div class="overlay"></div>
     </main>
     <script src="script.js"></script>
   </body>

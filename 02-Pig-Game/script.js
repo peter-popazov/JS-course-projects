@@ -1,6 +1,6 @@
 'use strict';
 
-const WIN_SCORE = 100;
+const WIN_SCORE = 20;
 
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
@@ -88,4 +88,26 @@ holdEl.addEventListener('click', function () {
 
 newGameEl.addEventListener('click', function () {
   init();
+});
+
+// Modal
+const closeModalEl = document.querySelector('.close-modal');
+const modalEl = document.querySelector('.modal');
+const overlayEl = document.querySelector('.overlay');
+const buttonFormEl = document.querySelector('.btn-form');
+const inputName0 = document.querySelector('.player-0');
+const inputName1 = document.querySelector('.player-1');
+const playerName0 = document.getElementById('name--0');
+const playerName1 = document.getElementById('name--1');
+
+closeModalEl.addEventListener('click', function () {
+  modalEl.classList.add('hidden');
+  overlayEl.classList.add('hidden');
+});
+
+buttonFormEl.addEventListener('click', function () {
+  playerName0.innerHTML = inputName0.value;
+  playerName1.innerHTML = inputName1.value;
+  modalEl.classList.add('hidden');
+  overlayEl.classList.add('hidden');
 });
