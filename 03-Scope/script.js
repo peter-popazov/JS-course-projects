@@ -32,43 +32,81 @@
 // calcAge(1985);
 // // printAge();
 
-// **Hoisting
+// // **Hoisting
 
-console.log(me);
-// console.log(job);
-// console.log(year);
+// console.log(me);
+// // console.log(job);
+// // console.log(year);
 
-var me = 'Name';
-let job = 'Job';
-const year = 2024;
+// var me = 'Name';
+// let job = 'Job';
+// const year = 2024;
 
-// console.log(addDecl(2, 3));
-// console.log(addExp(2, 3));
-// console.log(addArrow(2, 3));
+// // console.log(addDecl(2, 3));
+// // console.log(addExp(2, 3));
+// // console.log(addArrow(2, 3));
 
-function addDecl(a, b) {
-  return a + b;
-}
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-const addExp = function (a, b) {
-  return a + b;
+// const addExp = function (a, b) {
+//   return a + b;
+// };
+
+// var addArrow = (a, b) => a + b;
+
+// // Example
+
+// if (!numProducts) {
+//   deleteShoppingCart();
+//   console.log(Boolean(numProducts));
+// }
+
+// var numProducts = 10;
+
+// function deleteShoppingCart() {
+//   console.log('All products deleted');
+// }
+
+// var x = 1;
+// let y = 2;
+// const z = 3;
+
+// **this
+
+console.log(this);
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
 };
 
-var addArrow = (a, b) => a + b;
+calcAge(2024);
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
 
-// Example
+calcAgeArrow(2020);
 
-if (!numProducts) {
-  deleteShoppingCart();
-  console.log(Boolean(numProducts));
-}
+const perosn = {
+  year: 2000,
+  calcAge: function () {
+    console.log(2037 - this.year);
+  },
+};
 
-var numProducts = 10;
+perosn.calcAge();
 
-function deleteShoppingCart() {
-  console.log('All products deleted');
-}
+const matilda = {
+  year: 2017,
+};
 
-var x = 1;
-let y = 2;
-const z = 3;
+// Method borrowed from person
+matilda.calcAge = perosn.calcAge;
+matilda.calcAge();
+
+const f = perosn.calcAge;
+
+f();
