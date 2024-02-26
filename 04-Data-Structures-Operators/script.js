@@ -15,7 +15,12 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({ time = '20.00', address, mainIndex=1, starterIndex=1 }) {
+  orderDelivery: function ({
+    time = '20.00',
+    address,
+    mainIndex = 1,
+    starterIndex = 1,
+  }) {
     console.log(
       `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} at ${time} delevered to ${address}`
     );
@@ -35,7 +40,56 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `The dish is made of these ingredients ${ing1}, ${ing2}, ${ing3}`
+    );
+  },
 };
+
+// **Spread operator
+const array = [7, 8, 9];
+const expandedArray = [1, 2, ...array];
+console.log(expandedArray);
+console.log(...expandedArray);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+console.log(...newMenu);
+
+// Coppy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// Merge 2 arrays
+const mergedArray = [...newMenu, ...mainMenuCopy];
+console.log(mergedArray);
+
+// ['S', 't', 'r', 'i', 'n', 'g', ' ', 'e', 'x', 'a', 'm', 'p', 'l', 'e']
+let str = 'String example';
+str = [...str];
+console.log(str);
+
+// Function that accepts multiple arguments
+// const ingredients = [
+//   prompt('Enter ingredient1: '),
+//   prompt('Enter ingredient2: '),
+//   prompt('Enter ingredient3: '),
+// ];
+// restaurant.orderPasta(...ingredients);
+
+// Spread operator with objects
+const newRestaurant = {
+  ...restaurant,
+  founder: 'Someone someone',
+  foundYear: 1989,
+};
+console.log(newRestaurant);
+
+// Copy object
+const restaurantCopy = { ...restaurant };
+restaurantCopy.founder = 'Name Surname';
+console.log(restaurantCopy);
 
 // ** Destructuring Objects
 const { name, openingHours, categories } = restaurant;
@@ -74,7 +128,6 @@ restaurant.orderDelivery({
 restaurant.orderDelivery({
   address: 'Via del Sole, 21',
 });
-
 
 // ** Destructuring Arrays
 const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10];
