@@ -37,6 +37,44 @@ const restaurant = {
   },
 };
 
+// ** Destructuring Objects
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// Renaming the variables
+const { name: restaurantName, openingHours: hours } = restaurant;
+console.log(restaurantName, hours);
+
+// Giving initial values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Swap
+let g = 111;
+let h = 999;
+const obj = { g: 23, h: 7, j: 14 };
+({ g, h } = obj);
+console.log(g, h);
+
+// Nested Objects
+const {
+  fri: { open: fridayOpen, close: fridayClose },
+} = openingHours;
+console.log(fridayOpen);
+console.log(fridayClose);
+
+// Passing an object
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 1,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+});
+
 
 // ** Destructuring Arrays
 const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10];
