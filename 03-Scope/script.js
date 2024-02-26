@@ -73,40 +73,66 @@
 // let y = 2;
 // const z = 3;
 
-// **this
+// // **this
 
-console.log(this);
+// console.log(this);
 
-const calcAge = function (birthYear) {
-  console.log(2037 - birthYear);
-  console.log(this);
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+
+// calcAge(2024);
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+
+// calcAgeArrow(2020);
+
+// const perosn = {
+//   year: 2000,
+//   calcAge: function () {
+//     console.log(2037 - this.year);
+//   },
+// };
+
+// perosn.calcAge();
+
+// const matilda = {
+//   year: 2017,
+// };
+
+// // Method borrowed from person
+// matilda.calcAge = perosn.calcAge;
+// matilda.calcAge();
+
+// const f = perosn.calcAge;
+
+// f();
+
+// **objects&primitives
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+
+console.log(lastName);
+console.log(oldLastName);
+
+const person1 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
 };
 
-calcAge(2024);
-const calcAgeArrow = birthYear => {
-  console.log(2037 - birthYear);
-  console.log(this);
-};
+// const person2 = person1;
+// person2.lastName = 'Davis';
 
-calcAgeArrow(2020);
+// console.log('Person1', person1);
+// console.log('Person2', person2);
 
-const perosn = {
-  year: 2000,
-  calcAge: function () {
-    console.log(2037 - this.year);
-  },
-};
+const personCopy = Object.assign({}, person1);
+personCopy.lastName = 'Davis';
 
-perosn.calcAge();
-
-const matilda = {
-  year: 2017,
-};
-
-// Method borrowed from person
-matilda.calcAge = perosn.calcAge;
-matilda.calcAge();
-
-const f = perosn.calcAge;
-
-f();
+console.log('Person1', person1);
+console.log('Person2', personCopy);
