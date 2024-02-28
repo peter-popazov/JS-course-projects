@@ -46,9 +46,43 @@ const restaurant = {
       `The dish is made of these ingredients ${ing1}, ${ing2}, ${ing3}`
     );
   },
+  orderPizza: function (mainIng, ...otherIngs) {
+    console.log(mainIng);
+    console.log(otherIngs);
+  },
 };
 
+// **Rest pattern&parameters
+console.log('REST PATTERN&PARAMETERS');
+const [a1, b1, ...others] = [1, 2, 3, 4, 5];
+console.log(a1, b1, others);
+
+const [pizza, , risotto, ...otherfood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherfood);
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(`The result is ${sum}`);
+};
+add(2, 3);
+add(2, 3, 5, 10);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('Cheese', 'Meat', 'Tomato')
+
 // **Spread operator
+console.log('SPREAD OPERATOR');
 const array = [7, 8, 9];
 const expandedArray = [1, 2, ...array];
 console.log(expandedArray);
