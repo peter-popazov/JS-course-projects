@@ -11,16 +11,11 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({
-    time = '20.00',
-    address,
-    mainIndex = 1,
-    starterIndex = 1,
-  }) {
+  orderDelivery({ time = '20.00', address, mainIndex = 1, starterIndex = 1 }) {
     console.log(
       `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} at ${time} delevered to ${address}`
     );
@@ -41,16 +36,30 @@ const restaurant = {
     },
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `The dish is made of these ingredients ${ing1}, ${ing2}, ${ing3}`
     );
   },
-  orderPizza: function (mainIng, ...otherIngs) {
+  orderPizza(mainIng, ...otherIngs) {
     console.log(mainIng);
     console.log(otherIngs);
   },
 };
+
+// **Optional chaining
+// console.log(restaurant.openingHours.mon.open); // error
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant?.openingHours?.mon?.open);
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of weekdays) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we are ${open}`);
+}
+
+console.log(restaurant?.order?.(0, 1) ?? 'Not exist');
+console.log(restaurant?.orderRice?.(0, 1) ?? 'Not exist');
 
 // **Logical assignment operators
 console.log('LOGICAL ASSIGMENT OPERATORS');
@@ -86,8 +95,8 @@ const [pizza, , risotto, ...otherfood] = [
 ];
 console.log(pizza, risotto, otherfood);
 
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(sat, weekdays);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(sat, weekdays);
 
 const add = function (...numbers) {
   let sum = 0;
