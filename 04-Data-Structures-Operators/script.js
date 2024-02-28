@@ -52,6 +52,29 @@ const restaurant = {
   },
 };
 
+// **Logical assignment operators
+console.log('LOGICAL ASSIGMENT OPERATORS');
+const rest1 = {
+  name: 'Capri',
+  numGuests: 10,
+};
+
+const rest2 = {
+  name: 'Capri',
+  owner: 'Name Surname',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+
 // **Rest pattern&parameters
 console.log('REST PATTERN&PARAMETERS');
 const [a1, b1, ...others] = [1, 2, 3, 4, 5];
@@ -79,7 +102,7 @@ add(2, 3, 5, 10);
 const x = [23, 5, 7];
 add(...x);
 
-restaurant.orderPizza('Cheese', 'Meat', 'Tomato')
+restaurant.orderPizza('Cheese', 'Meat', 'Tomato');
 
 // **Spread operator
 console.log('SPREAD OPERATOR');
