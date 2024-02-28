@@ -47,6 +47,20 @@ const restaurant = {
   },
 };
 
+// **Looping over objects
+const keys = Object.keys(restaurant.openingHours);
+console.log(keys);
+
+const values = Object.values(restaurant.openingHours);
+console.log(values);
+
+const entries = Object.entries(restaurant.openingHours);
+console.log(entries);
+
+for (const [day, {open, close}] of entries) {
+  console.log(`We are open on ${day} from ${open} to ${close}.`);
+}
+
 // **Optional chaining
 // console.log(restaurant.openingHours.mon.open); // error
 console.log(restaurant.openingHours.mon?.open);
