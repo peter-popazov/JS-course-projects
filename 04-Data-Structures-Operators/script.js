@@ -47,6 +47,35 @@ const restaurant = {
   },
 };
 
+// **Sets
+const orderSet = new Set(['Pasta', 'Pizza', 'Rizotto', 'Sushi', 'Pasta']);
+console.log(orderSet);
+
+console.log(orderSet.size);
+
+console.log(orderSet.has('Bread'));
+orderSet.add('Bread');
+console.log(orderSet);
+console.log(orderSet.has('Bread'));
+
+orderSet.delete('Rizotto');
+orderSet.delete('Meat Rizotto');
+console.log(orderSet);
+
+// orderSet.clear();
+// console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Waiter', 'Chef'];
+console.log('Positions in the restaurant:');
+const positions = [...new Set(staff)]
+for (const position of positions) {
+  console.log(position);
+}
+
 // **Looping over objects
 const keys = Object.keys(restaurant.openingHours);
 console.log(keys);
@@ -57,7 +86,7 @@ console.log(values);
 const entries = Object.entries(restaurant.openingHours);
 console.log(entries);
 
-for (const [day, {open, close}] of entries) {
+for (const [day, { open, close }] of entries) {
   console.log(`We are open on ${day} from ${open} to ${close}.`);
 }
 
