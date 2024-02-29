@@ -223,6 +223,7 @@ const books = [
   },
 ];
 
+// Objects
 const entries = [];
 
 const keys = Object.keys(books[0].thirdParty.goodreads);
@@ -233,9 +234,48 @@ console.log(entries);
 
 const values = Object.values(books[0].thirdParty.goodreads).entries();
 for (const [index, value] of values) {
-    entries[index].push(value);
+  entries[index].push(value);
 }
 console.log(entries);
 
 const entries2 = Object.entries(books[0].thirdParty.goodreads);
 console.log(entries2);
+
+// Sets
+let allKeyWords = [];
+for (let i = 0; i < books.length; i++) {
+  allKeyWords.push(...books[i].keywords);
+}
+console.log(allKeyWords);
+
+const uniqueKeyWords = new Set(allKeyWords);
+console.log(uniqueKeyWords);
+
+uniqueKeyWords.add('coding');
+uniqueKeyWords.add('science');
+console.log(uniqueKeyWords);
+
+uniqueKeyWords.delete('business');
+console.log(uniqueKeyWords);
+
+const uniqueArray = [...uniqueKeyWords];
+console.log(uniqueArray);
+
+uniqueKeyWords.clear();
+console.log(uniqueKeyWords);
+
+// Maps
+const book = new Map();
+book
+  .set('title', 'Clean Code')
+  .set('author', 'Robert C. Martin')
+  .set('pages', 464);
+console.log(book);
+
+console.log(`${book.get('title')} by ${book.get('author')}`);
+
+console.log(book.size);
+
+book.has('author') &&
+  console.log(`The author of the book is ${book.get('author')}`);
+book.has('author') || console.log('The author of the book is unknown');
