@@ -47,6 +47,23 @@ const restaurant = {
   },
 };
 
+// **Maps
+const rest = new Map();
+rest.set('name', 'Italiano');
+rest.set(1, 'Rome, Italy');
+rest.set(2, 'Lisbon, Portugal');
+console.log(rest);
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', '11')
+  .set('close', '23')
+  .set(true, 'We are open!')
+  .set(false, 'We are closed');
+console.log(rest);
+
+console.log(rest.get('categories'));
+
 // **Sets
 const orderSet = new Set(['Pasta', 'Pizza', 'Rizotto', 'Sushi', 'Pasta']);
 console.log(orderSet);
@@ -71,7 +88,7 @@ for (const order of orderSet) {
 
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Waiter', 'Chef'];
 console.log('Positions in the restaurant:');
-const positions = [...new Set(staff)]
+const positions = [...new Set(staff)];
 for (const position of positions) {
   console.log(position);
 }
