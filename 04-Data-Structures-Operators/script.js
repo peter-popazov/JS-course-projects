@@ -47,6 +47,25 @@ const restaurant = {
   },
 };
 
+// **Strtings
+const checkBaggage = function (items) {
+  const lowered = items.toLowerCase();
+  if (
+    lowered.includes('knife') ||
+    lowered.includes('powerbank') ||
+    lowered.includes('scissors')
+  ) {
+    console.log('NOT ALLOWED');
+    return;
+  }
+  console.log('WELCOME');
+};
+
+checkBaggage('Laptop, charger, powerbank, water');
+checkBaggage('Knife, charger, phone, food');
+checkBaggage('Scissors, tablet, Bottle of water, pillow');
+checkBaggage('Food, tablet, Bottle of water, pillow');
+
 // **Maps
 const rest = new Map();
 rest.set('name', 'Italiano');
