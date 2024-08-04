@@ -36,16 +36,19 @@ const restaurant = {
     },
   },
 
-  orderPasta(ing1, ing2, ing3) {
-    console.log(
-      `The dish is made of these ingredients ${ing1}, ${ing2}, ${ing3}`
-    );
+  orderPasta(...ings) {
+    console.log('The dish is made of these ingredient:');
+    for (const ing of ings) {
+      console.log('->' + ing);
+    }
   },
   orderPizza(mainIng, ...otherIngs) {
     console.log(mainIng);
     console.log(otherIngs);
   },
 };
+
+restaurant.orderPasta('SOUSE', 'MEAT');
 
 // **Strtings
 const checkBaggage = function (items) {
