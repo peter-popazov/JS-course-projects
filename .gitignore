@@ -3,3 +3,7 @@ man-1.jpg
 man-2.jpg
 new.html 
 .prettierrc
+node_modules
+.cache
+dist
+package-lock.json
